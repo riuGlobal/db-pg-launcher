@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  database-postgres:
+    container_name: ${CONTAINER_NAME:-db-pg}
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+    volumes:
+      - ${PWD}/pg-data:/var/lib/postgresql/data
